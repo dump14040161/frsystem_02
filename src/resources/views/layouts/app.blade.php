@@ -1,4 +1,4 @@
-｀｀｀<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Laravel Quickstart - Basic</title>
@@ -15,5 +15,5 @@
 
         @yield('content')
     </body>
-</html>｀｀｀
+</html>
 
