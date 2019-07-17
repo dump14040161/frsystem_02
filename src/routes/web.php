@@ -1,7 +1,8 @@
 <?php
 
-use App\Task;
+use App\Facilitie;
 use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +15,19 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('tasks');
+    //データベスから値を持ってきている
+    return view('facilities');
+    $facilities = Facilities::orderBy('created_at', 'asc')->get();
+    //viewhablade.phpの処理繰り返してくれるr
+    return view(
+        ' facilities',
+        [
+            'facilites' => $facilities
+        ]
+    );
 });
 
-Route::post('/task', function (Request $request) {
+Route::post('/facilities', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);
@@ -28,13 +38,9 @@ Route::post('/task', function (Request $request) {
             ->withErrors($validator);
     }
 
-    $task = new Task();
-    $task->name = $request->name;
-    $task->save();
+    $facilite = new Facilitie();
+    $facilite->name = $request->name;
+    $facilite->save();
 
     return redirect('/');
-
-
-
-
 });
