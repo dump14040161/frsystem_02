@@ -1,5 +1,7 @@
 <?php
 
+use App\Task;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tasks');
 });
 
 Route::post('/task', function (Request $request) {
@@ -26,5 +28,13 @@ Route::post('/task', function (Request $request) {
             ->withErrors($validator);
     }
 
-    // タスク作成…
+    $task = new Task();
+    $task->name = $request->name;
+    $task->save();
+
+    return redirect('/');
+
+
+
+
 });
