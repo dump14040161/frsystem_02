@@ -1,6 +1,6 @@
 <?php
 
-use App\Facilitie;
+use App\Facility;
 use Illuminate\Http\Request;
 
 /*
@@ -16,18 +16,18 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     //データベスから値を持ってきている
-    return view('facilities');
-    $facilities = Facilities::orderBy('created_at', 'asc')->get();
+    // return view('facilities');
+    $facilities = Facility::orderBy('created_at', 'asc')->get();
     //viewhablade.phpの処理繰り返してくれるr
     return view(
         ' facilities',
         [
-            'facilites' => $facilities
+            'facilities' => $facilities
         ]
     );
 });
 
-Route::post('/facilities', function (Request $request) {
+Route::post('/facility', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);
@@ -38,9 +38,9 @@ Route::post('/facilities', function (Request $request) {
             ->withErrors($validator);
     }
 
-    $facilite = new Facilitie();
-    $facilite->name = $request->name;
-    $facilite->save();
+    $facility= new Facility();
+    $facility->name = $request->name;
+    $facility->save();
 
     return redirect('/');
 });

@@ -9,15 +9,15 @@
         @include('common.errors')
 
         <!-- 新タスクフォーム -->
-        <form action="/facilitie" method="POST" class="form-horizontal">
+        <form action="/facility" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- タスク名 -->
             <div class="form-group">
-                <label for="facilitie" class="col-sm-3 control-label">Task</label>
+                <label for="facility" class="col-sm-3 control-label">Facility</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="facilitie-name" class="form-control">
+                    <input type="text" name="name" id="facility-name" class="form-control">
                 </div>
             </div>
 
@@ -33,29 +33,28 @@
     </div>
 
     <!-- TODO: 現在のタスク -->
-    <!-- 現在のタスク -->
-    @if (count($facilitie) > 0)
+     @if (count($facilities) > 0)
     <div class="panel panel-default">
         <div class="panel-heading">
             現在のタスク
         </div>
 
         <div class="panel-body">
-            <table class="table table-striped task-table">
+            <table class="table table-striped facility-table">
 
                 <!-- テーブルヘッダー -->
                 <thead>
-                    <th>Task</th>
+                    <th>Facility</th>
                     <th>&nbsp;</th>
                 </thead>
 
                 <!-- テーブルボディー -->
                 <tbody>
-                    @foreach ($facilities as $facilitie)
+                    @foreach ($facilities as $facility)
                         <tr>
                             <!-- タスク名 -->
                             <td class="table-text">
-                                <div>{{ $facilities>name }}</div>
+                                <div>{{ $facility->name }}</div>
                             </td>
 
                             <td>
@@ -68,4 +67,5 @@
         </div>
     </div>
     @endif
+
 @endsection
