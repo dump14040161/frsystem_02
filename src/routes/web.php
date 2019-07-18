@@ -2,6 +2,7 @@
 
 use App\Facility;
 use Illuminate\Http\Request;
+//ファサード？？
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/', function () {
     );
 });
 
+//タスク作成
 Route::post('/facility', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
@@ -41,6 +43,13 @@ Route::post('/facility', function (Request $request) {
     $facility= new Facility();
     $facility->name = $request->name;
     $facility->save();
+
+    return redirect('/');
+});
+
+//削除ボタン
+Route::delete('/facility/{id}', function ($id) {
+    Facility::findOrFail($id)->delete();
 
     return redirect('/');
 });

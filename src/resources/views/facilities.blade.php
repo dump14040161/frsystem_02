@@ -42,6 +42,7 @@
         <div class="panel-body">
             <table class="table table-striped facility-table">
 
+
                 <!-- テーブルヘッダー -->
                 <thead>
                     <th>Facility</th>
@@ -59,6 +60,13 @@
 
                             <td>
                                 <!-- TODO: 削除ボタン -->
+
+                                <form action="/facility/{{ $facility->id }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+
+                                    <button>タスク削除</button>
+                                 </form>
                             </td>
                         </tr>
                     @endforeach
