@@ -14,38 +14,44 @@
 
             <!-- タスク名 -->
             <div class="form-group">
-                <label for="facility" class="col-sm-3 control-label">Facility</label>
+                <label for="facility" class="col-sm-3 control-label">施設名を入力</label>
+
 
                 <div class="col-sm-6">
                     <input type="text" name="name" id="facility-name" class="form-control">
                 </div>
             </div>
 
+
+
             <!-- タスク追加ボタン -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> タスク追加
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">追加</button >
+
+                        <i class="fa fa-plus"></i>
                     </button>
                 </div>
             </div>
         </form>
     </div>
 
+    
     <!-- TODO: 現在のタスク -->
      @if (count($facilities) > 0)
     <div class="panel panel-default">
         <div class="panel-heading">
-            現在のタスク
+            予約一覧
         </div>
 
         <div class="panel-body">
-            <table class="table table-striped facility-table">
+            <table class="table table-hover facility-table">
+
 
 
                 <!-- テーブルヘッダー -->
                 <thead>
-                    <th>Facility</th>
+                    <th class="text-center">施設名 </th>
                     <th>&nbsp;</th>
                 </thead>
 
@@ -54,8 +60,8 @@
                     @foreach ($facilities as $facility)
                         <tr>
                             <!-- タスク名 -->
-                            <td class="table-text">
-                                <div>{{ $facility->name }}</div>
+                            <td class="table-text-">
+                                <div class="text-center">{{ $facility->name }}</div>
                             </td>
 
                             <td>
@@ -65,7 +71,9 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button>タスク削除</button>
+
+                                    <button type="submit" class="btn btn-danger">削除ボタン</button>
+
                                  </form>
                             </td>
                         </tr>
