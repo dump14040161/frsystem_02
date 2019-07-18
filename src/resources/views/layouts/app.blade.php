@@ -7,6 +7,7 @@
         <title>Laravel Quickstart - Basic</title>
 
         <!-- CSSとJavaScript -->
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -14,7 +15,10 @@
 
     <body>
         <div class="container">
-            <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default,p-3 mb-2 bg-primary text-white"><h1 class="text-center">施設予約システム</h1>
+        </nav>
+
+
                 <!-- ナビバーの内容 -->
             </nav>
         </div>
