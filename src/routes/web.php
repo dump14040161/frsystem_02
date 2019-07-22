@@ -16,19 +16,18 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    //データベスから値を持ってきている
-    // return view('facilities');
+    // データベースから値を持ってきている
     $facilities = Facility::orderBy('created_at', 'asc')->get();
-    //viewhablade.phpの処理繰り返してくれるr
+    // viewによってfacilities.blade.phpをページとして処理している。
     return view(
-        ' facilities',
+        'facilities',
         [
             'facilities' => $facilities
         ]
     );
 });
 
-//タスク作成
+// タスク作成
 Route::post('/facilities', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
@@ -47,7 +46,7 @@ Route::post('/facilities', function (Request $request) {
     return redirect('/');
 });
 
-//削除ボタン
+// 削除ボタン
 Route::delete('/facilities/{id}', function ($id) {
     Facility::findOrFail($id)->delete();
 

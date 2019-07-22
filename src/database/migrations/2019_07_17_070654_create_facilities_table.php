@@ -17,6 +17,7 @@ class CreateFacilitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
+            //createdatt update errdate を自動でしてくれる　テーブルの構成
         });
     }
 
