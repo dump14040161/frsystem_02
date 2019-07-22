@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 
 //タスク作成
-Route::post('/facility', function (Request $request) {
+Route::post('/facilities', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
     ]);

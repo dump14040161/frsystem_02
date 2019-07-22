@@ -9,7 +9,7 @@
         @include('common.errors')
 
         <!-- 新タスクフォーム -->
-        <form action="/facility" method="POST" class="form-horizontal">
+        <form action="/facilities" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- タスク名 -->
