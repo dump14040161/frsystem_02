@@ -1,4 +1,4 @@
-@extends('layouts.app')
+    @extends('layouts.app')
 
 @section('content')
 
@@ -17,8 +17,19 @@
                 <label for="facility" class="col-sm-3 control-label">施設名を入力</label>
 
 
+
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="facility-name" class="form-control">
+                <input type="text" name="name" id="facility-name" class="form-control">
+                        <select>
+                            <option>北海道</option>
+                            <option>東北</option>
+                            <option>関東・甲信越</option>
+                            <option>近畿</option>
+                            <option>中部</option>
+                            <option>中国・四国</option>
+                            <option>九州</option>
+                            <option>沖縄</option>
+                          </select>
                 </div>
             </div>
 
@@ -36,16 +47,19 @@
         </form>
     </div>
 
-    
+
     <!-- TODO: 現在のタスク -->
      @if (count($facilities) > 0)
     <div class="panel panel-default">
         <div class="panel-heading">
-            予約一覧
+        <h3 class="text-center">予約一覧</h3>
         </div>
 
+
+
         <div class="panel-body">
-            <table class="table table-hover facility-table">
+            <table class="table table-hover facility-table facility-table">
+
 
 
 
