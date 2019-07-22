@@ -17,16 +17,8 @@
 
                 <div class="col-sm-6">
                     <!-- FIXME: inputタグに変更する -->
-                    <select type="text" name="name" id="facility-name" class="form-control">
-                        <option>北海道</option>
-                        <option>東北</option>
-                        <option>関東・甲信越</option>
-                        <option>近畿</option>
-                        <option>中部</option>
-                        <option>中国・四国</option>
-                        <option>九州</option>
-                        <option>沖縄</option>
-                    </select>
+                    <input type="text" name="name" id="facility-name" class="form-control">
+                        
                 </div>
             </div>
 
