@@ -19,8 +19,7 @@
 
 
                 <div class="col-sm-6">
-                <input type="text" name="name" id="facility-name" class="form-control">
-                        <select>
+                        <select type="text" name="name" id="facility-name" class="form-control">
                             <option>北海道</option>
                             <option>東北</option>
                             <option>関東・甲信越</option>
@@ -39,8 +38,6 @@
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">追加</button >
-
-                        <i class="fa fa-plus"></i>
                     </button>
                 </div>
             </div>
