@@ -57,7 +57,7 @@ Route::delete('/facilities/{id}', function ($id) {
 
 
 
-Route::get('/', function () {
+Route::get('/reservation_page', function () {
     // データベースから値を持ってきている
     $reservations = Reservation::orderBy('created_at', 'asc')->get();
     // viewによってfacilities.blade.phpをページとして処理している。
