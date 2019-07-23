@@ -52,7 +52,7 @@
 
                     <!-- テーブルボディー -->
                     <tbody>
-                        @foreach ($reservation as $reservations)
+                        @foreach ($reservations as $reservation)
                             <tr>
                                 <!-- タスク名 -->
                                 <td class="table-text-">
@@ -61,7 +61,7 @@
 
                                 <td>
                                     <!-- 削除ボタン -->
-                                    <form action="/reservation/{{ $reservation->id }}" method="POST">
+                                    <form action="/reservations/{{ $reservation->id }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger">削除ボタン</button>
