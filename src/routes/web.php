@@ -60,7 +60,7 @@ Route::delete('/facilities/{id}', function ($id) {
 Route::get('/reservation_page', function () {
     // データベースから値を持ってきている
     $reservations = Reservation::orderBy('created_at', 'asc')->get();
-    // viewによってfacilities.blade.phpをページとして処理している。
+    // viewによってreservation.blade.phpをページとして処理している。
     return view(
         'reservations',
         [
@@ -69,7 +69,7 @@ Route::get('/reservation_page', function () {
     );
 });
 
-// タスク作成
+// タスク作成,post=create
 Route::post('/reservations', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
@@ -94,3 +94,4 @@ Route::delete('/reservations/{id}', function ($id) {
 
     return redirect('/');
 });
+
