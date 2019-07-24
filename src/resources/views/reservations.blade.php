@@ -11,25 +11,99 @@
 
             <!-- タスク名 -->
             <div class="form-group">
-                <label for="reservation" class="col-sm-3 control-label">施設名を入力</label>
-
-
-
                 <div class="col-sm-6">
                     <!-- FIXME: inputタグに変更する -->
-                    <input type="text" name="name" id="reservation-name" class="form-control">
-
+                    {{-- <input type="text" name="name" id="reservation-name" class="form-control"> --}}
                 </div>
             </div>
+
+            <div class="form-group">
+
+                <label for="reservation" class="col-sm-4 control-label">◼️チェックイン</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-5'>
+                            <div class="form-group">
+                                <input type='date' class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="reservation" class="col-sm-4 control-label">◼️チェックアウト</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-5'>
+                            <div class="form-group">
+                                    <input type='date' class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <label for="reservation" class="col-sm-4 control-label">◼️チェックイン時刻</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-5'>
+                            <div class="form-group">
+                                    <select class="form-control" name="time">
+                                            <option>15:00</option>
+                                            <option>16:00</option>
+                                            <option>17:00</option>
+                                            <option>18:00</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <label for="reservation" class="col-sm-4 control-label">◼️大人</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-1'>
+                            <div class="form-group">
+                                    <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="reservation" class="col-sm-4 control-label">◼️子供</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-1'>
+                            <div class="form-group">
+                                    <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
 
             <!-- タスク追加ボタン -->
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">追加</button>
-                </div>
-            </div>
+
+                <div class="form-group class=”form-inline”">
+                    <div class="col-md-3 col-md-offset-5">
+                        <button type="submit" class="btn btn-primary btn-lg ">決定</button>
+                        <button type="submit" class="btn btn-danger btn-lg ">キャンセル</button>
+                    </div>
+                <div>
         </form>
     </div>
 
@@ -56,7 +130,7 @@
                             <tr>
                                 <!-- タスク名 -->
                                 <td class="table-text-">
-                                    <div class="text-center">{{ $reservation->name }}</div>
+                                    <div class="text-center">{{ $reservation->start_time }}</div>
                                 </td>
 
                                 <td>
