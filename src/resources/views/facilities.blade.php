@@ -9,6 +9,8 @@
         <form action="/facilities" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
+            {{-- <div>{{ $reservation_page }}</div> --}}
+
             <!-- タスク名 -->
             <div class="form-group">
                 <label for="facility" class="col-sm-3 control-label">施設名を入力</label>
@@ -57,6 +59,7 @@
                                 <!-- タスク名 -->
                                 <td class="table-text-">
                                     <div class="text-center">{{ $facility->name }}</div>
+                                    {{-- <div>{{ $reservation_page }}</div> --}}
                                 </td>
 
                                 <td>

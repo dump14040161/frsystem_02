@@ -20,11 +20,13 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     // データベースから値を持ってきている
     $facilities = Facility::orderBy('created_at', 'asc')->get();
-    // viewによってfacilities.blade.phpをページとして処理している。
+    // viewによってfacilities.blade.phpをページとして処理している。ファシリーズテーブル　asになる
     return view(
         'facilities',
         [
-            'facilities' => $facilities
+            'facilities' => $facilities,
+            // 'reservation' => 'reservation_page'
+
         ]
     );
 });
@@ -65,6 +67,7 @@ Route::get('/reservation_page', function () {
         'reservations',
         [
             'reservations' => $reservations
+
         ]
     );
 });
