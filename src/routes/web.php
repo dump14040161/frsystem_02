@@ -25,7 +25,7 @@ Route::get('/', function () {
         'facilities',
         [
             'facilities' => $facilities,
-            // 'reservation' => 'reservation_page'
+            //  'reservation' => 'reservation'
 
         ]
     );
@@ -91,7 +91,7 @@ Route::post('/reservations', function (Request $request) {
     return redirect('/');
 });
 
-// 削除ボタン
+// キャンセルボタン
 Route::delete('/reservations/{id}', function ($id) {
     Reservation::findOrFail($id)->delete();
 

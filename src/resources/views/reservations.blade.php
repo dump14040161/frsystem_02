@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                <input type='date' class="form-control"/>
+                                <input type='date' name="name" id="reservations-name"class="form-control"/>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                    <input type='date' class="form-control" />
+                                    <input type='date' name="name" id="reservations-name" class="form-control" />
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                    <select class="form-control" name="time">
+                                    <select type="text" name="name" id="reservations-name" class="form-control" name="time">
                                             <option>15:00</option>
                                             <option>16:00</option>
                                             <option>17:00</option>
@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class='col-sm-1'>
                             <div class="form-group">
-                                    <select class="form-control">
+                                    <select type="text" name="name" id="reservations-name"class="form-control">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class='col-sm-1'>
                             <div class="form-group">
-                                    <select class="form-control">
+                                    <select type="text" name="name" id="reservations-name" class="form-control">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -126,11 +126,14 @@
 
                     <!-- テーブルボディー -->
                     <tbody>
-                        @foreach ($reservations as $reservation)
+                            @foreach ($reservations as $reservations)
                             <tr>
                                 <!-- タスク名 -->
                                 <td class="table-text-">
-                                    <div class="text-center">{{ $reservation->start_time }}</div>
+                                    <div class="text-center">{{ $reservations->name }}</div>
+                                    {{-- <div class="text-center">{{ $reservations->end_time}}</div>
+                                    <div class="text-center">{{ $reservations->adult_coun}}</div>
+                                    <div class="text-center">{{ $reservations->child_count}}</div> --}}
                                 </td>
 
                                 <td>
@@ -144,7 +147,7 @@
                             </tr>
                             </div>
                     </div>
-                        @endforeach
+                            @endforeach
                     </tbody>
                 </table>
             </div>

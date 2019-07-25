@@ -9,7 +9,7 @@
         <form action="/facilities" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            {{-- <div>{{ $reservation_page }}</div> --}}
+            {{-- <div>{{ $reservation_ }}</div> --}}
 
             <!-- タスク名 -->
             <div class="form-group">
@@ -68,6 +68,15 @@
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger">削除ボタン</button>
+
+                                        <div class="text-center">
+                                                <a href="/reservation_page" class="btn btn-success" role="button">他のページに遷移！</a>
+                                        </div>
+
+
+
+
+
                                     </form>
                                 </td>
                             </tr>
