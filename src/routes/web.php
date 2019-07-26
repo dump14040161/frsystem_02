@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Routeクラスが”/”の設定をしているメイン。getで、、、
 Route::get('/', function () {
     // データベースから値を持ってきている
     $facilities = Facility::orderBy('created_at', 'asc')->get();
