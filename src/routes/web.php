@@ -76,19 +76,27 @@ Route::get('/reservation_page', function () {
 Route::post('/reservations', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:255',
+        'start' => 'required',
+        'end' => 'required',
+        'count_adult' => 'required',
+        'count_child' => 'required',
     ]);
 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect('/reservation_page')
             ->withInput()
             ->withErrors($validator);
     }
 
     $reservation= new Reservation();
-    $reservation->name = $request->name;
+    // $facility->name = $request->name;
+    $reservation->start = $request->start;
+    $reservation->end = $request->end;
+    $reservation->count_adult = $request->count_adult;
+    $reservation->count_child = $request->count_child;
     $reservation->save();
 
-    return redirect('/');
+    return redirect('/facilities');
 });
 
 // キャンセルボタン

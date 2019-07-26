@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\facility;
 
 class CreateReservationsTable extends Migration
 {
@@ -15,10 +16,11 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('name');
-            $table->string('name');
-            $table->string('name');
+            $table->bigIntenger(reservation_id);
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->Intenger('count_adult');
+            $table->Intenger('cunt_child');
             // $table->date('end_time');
             // $table->string('adult_count');
             // $table->string('child_count');

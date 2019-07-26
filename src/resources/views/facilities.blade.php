@@ -9,7 +9,7 @@
         <form action="/facilities" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            {{-- <div>{{ $reservation_ }}</div> --}}
+             {{-- <div>{{ $reservation }}</div> --}}
 
             <!-- タスク名 -->
             <div class="form-group">
