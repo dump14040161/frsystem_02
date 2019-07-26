@@ -14,6 +14,7 @@
                 <div class="col-sm-6">
                     <!-- FIXME: inputタグに変更する -->
                     {{-- <input type="text" name="name" id="reservation-name" class="form-control"> --}}
+                    <input type="text" name="start" id="resrvation-start" class="form-control">
                 </div>
             </div>
 
@@ -24,7 +25,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                <input type='date' name="name" id="reservations-name"class="form-control"/>
+                                <input type='date' name="start" id="reservation-start"class="form-control">
                             </div>
                         </div>
                     </div>
@@ -35,7 +36,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                    <input type='date' name="name" id="reservations-name" class="form-control" />
+                                    <input type='date' name="end" id="reservation-end" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -46,7 +47,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                    <select type="text" name="name" id="reservations-name" class="form-control" name="time">
+                                    <select type="text" name="start" id="reservation-start" class="form-control">
                                             <option>15:00</option>
                                             <option>16:00</option>
                                             <option>17:00</option>
@@ -63,7 +64,7 @@
                     <div class="row">
                         <div class='col-sm-1'>
                             <div class="form-group">
-                                    <select type="text" name="name" id="reservations-name"class="form-control">
+                                    <select type="text" name="count_adult" id="reservation-count_adult"class="form-control">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -80,7 +81,7 @@
                     <div class="row">
                         <div class='col-sm-1'>
                             <div class="form-group">
-                                    <select type="text" name="name" id="reservations-name" class="form-control">
+                                    <select type="text" name="count_child" id="reservations-count_child" class="form-control">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -126,19 +127,19 @@
 
                     <!-- テーブルボディー -->
                     <tbody>
-                            @foreach ($reservations as $reservations)
+                            @foreach ($reservations as $reservation)
                             <tr>
                                 <!-- タスク名 -->
                                 <td class="table-text-">
-                                    <div class="text-center">{{ $reservations->name }}</div>
-                                    {{-- <div class="text-center">{{ $reservations->end_time}}</div>
-                                    <div class="text-center">{{ $reservations->adult_coun}}</div>
-                                    <div class="text-center">{{ $reservations->child_count}}</div> --}}
+                                    <div class="text-center">{{ $reservation->start }}</div>
+                                    <div class="text-center">{{ $reservation->end }}</div>
+                                    <div class="text-center">{{ $reservation->count_adult }}</div>
+                                    <div class="text-center">{{ $reservation->count_child }}</div>
                                 </td>
 
                                 <td>
                                     <!-- 削除ボタン -->
-                                    <form action="/reservations/{{ $reservation->id }}" method="POST">
+                                    <form action="/reservations/{{ $reservation->reservation_id }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger">削除ボタン</button>
